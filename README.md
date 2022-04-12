@@ -1,9 +1,7 @@
 # Capstone Project: Treasure Hunt v1
-======
 Personal capstone project for the end of foundations for HTML, CSS and JavaScript.
 
 # Purpose of project
-======
 To create a simple game on a website to test my knowledge and skills of developing a web app using HTML, CSS and JavaScript.
 
 ## Stages of development
@@ -12,7 +10,6 @@ Stage 2: Level progression and shop (5 days)
 Stage 3: Game end conditions, bombs and new shop items (scanner and shield)
 
 # Game information
-======
 ## Objective of game
 Get to the highest number of levels possible (8) with each round increasing in difficulty.
 
