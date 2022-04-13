@@ -77,27 +77,109 @@
         makeRows(gridNumber, gridNumber)
 
     // Place loot
-        // Add class to cells
+        // Function to generate array for loot
+        var lootArray = []
+        var lootTrue = gridNumber
+        for(var i=0 ; i < (gridNumber * gridNumber) ; i++){
+            if (lootTrue > 0) {
+                lootArray.push(true)
+                lootTrue -= 1
+            } else {
+                lootArray.push(false)
+            }
+        }
 
+        // Create function to shuffle array
+        function shuffle(array) {
+            let currentIndex = array.length,  randomIndex;
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
+              // Pick a remaining element.
+              randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+              // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        // Shuffle lootArray
+        shuffle(lootArray)
+        console.log(lootArray)
+
+        // Add loot class to cells
+        chosenCell = document.getElementsByClassName('grid-item')
+        for (i = 0; i < (gridNumber * gridNumber); i++) {
+            if (lootArray[i] == true) {
+                chosenCell[i].classList.add('loot')
+            }
+        }
+        
 
 // Gameplay mechanics
     // Click on cell to uncover it
-    chosenCell = document.getElementsByClassName('grid-item')
     for (i = 0; i < (gridNumber * gridNumber); i++) {
         chosenCell[i].addEventListener('click', function(e) {
+            // If still have shovels
             if (shovel > 0) {
-                // Change selected cell color
-                e.target.style.backgroundColor = "yellow";
-                // Update shovels
+                // Change selected cell color based on loot
+                // If there is loot
+                // console.log(e.target.className == "grid-item loot")
+                if (e.target.className == "grid-item loot") {
+                    // Add rarity of loot
+                    var rng = Math.random();
+                    var rarity = ""
+                    var reward = 0
+                    if (rng <= 0.05) {
+                        rarity = "mythical"
+                        reward = 1000;
+                        e.target.style.backgroundColor = "purple";
+                    } else if (rng <= 0.15) {
+                        rarity = "rare"
+                        reward = 300;
+                        e.target.style.backgroundColor = "blue";
+                    } else if (rng <= 0.3) {
+                        rarity = "uncommon"
+                        reward = 100;
+                        e.target.style.backgroundColor = "green";
+                    } else {
+                        rarity = "common"
+                        reward = 50;
+                        e.target.style.backgroundColor = "yellow";
+                    }
+                    // Alert player once they found a loot
+                    alert(`You found 1 ${rarity} chest! You have gained ${reward} gold!`)
+                    // Update UI for found loot
+                    gold += reward
+                    goldUI[0].innerHTML = `Gold: ${gold}`
+                    lootRemaining -= 1;
+                    lootRemainingUI[0].innerHTML = `Loot remaining: ${lootRemaining}`
+                } 
+                // If there is no loot
+                else {
+                    e.target.style.backgroundColor = "white";
+                }
+                // Update shovelUI
                 shovel -= 1
                 shovelUI[0].innerHTML = `Shovels: ${shovel}`
-            } else {
+                // If no more shovels
+                if (shovel == 0) {
+                    alert(`You have run out of shovels!`)
+                    // Part 2: To create next round or gameover screen
+                }
+            } 
+            // When player tries to click when no shovels remaining
+            else {
                 alert(`You have no more shovels remaining!`)
             }
-
+            // Level end
+            if (lootRemaining == 0) {
+                alert("You have cleared the area of loot!")
+            }
         }, false);
     }
     // Gain loot
 
 
-// Game end
+

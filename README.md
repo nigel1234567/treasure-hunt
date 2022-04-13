@@ -5,13 +5,13 @@ Personal capstone project for the end of foundations for HTML, CSS and JavaScrip
 To create a simple game on a website to test my knowledge and skills of developing a web app using HTML, CSS and JavaScript.
 
 ## Stages of development
-Stage 1: Play area and functional round (5 days)
-Stage 2: Level progression and shop (5 days)
-Stage 3: Game end conditions, bombs and new shop items (scanner and shield)
+Part 1: Play area and functional round (5 days)
+Part 2: Level progression and shop (5 days)
+Part 3: Game end conditions, bombs and new shop items (bag, scanner and shield)
 
 # Game information
 ## Objective of game
-Get to the highest number of levels possible (8) with each round increasing in difficulty.
+Get to the highest amount of gold by the end of the highest level possible (8) with each round increasing in difficulty.
 
 ## How to play
 ### Gameplay
