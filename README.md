@@ -64,8 +64,9 @@ Every level increase by 1
 | Mythical      | 5%            | 1000  |
 
 ## Shop
-| Loot          | Cost          | Description                          |
-| ------------- |:-------------:| ------------------------------------:|
-| Shovel        | 10            | To dig a selected cell               |
-| Scanner       | 50            | Scan selected cell for loot or bombs |
-| Shield        | 200           | Protect from one bomb                |
+| Loot          | Cost          | Description                                |
+| ------------- |:-------------:| ------------------------------------------:|
+| Shovel        | 10            | To dig a selected cell                     |
+| Scanner       | 50            | Scan selected cell for loot or bombs       |
+| Shield        | 200           | Protect from one bomb                      |
+| Bag upgrade   | 500           | Upgrade max amount of shovels you can hold |

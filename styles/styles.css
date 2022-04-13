@@ -1,6 +1,8 @@
 :root {
   --color-font-primary: rgb(29, 29, 29);
   --color-font-secondary: rgb(70, 70, 70);
+  --grid-cols: 1;
+  --grid-rows: 1;
 }
 
 .main-con {
@@ -51,9 +53,16 @@
 }
 
 .main-con .game-area .game-cells .game-grid {
-  border: 4px solid green;
-  height: 700px;
-  width: 700px;
+  border: 3px solid var(--color-font-primary);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[var];
+      grid-template-rows: repeat(var(--grid-rows), 1fr);
+  -ms-grid-columns: (1fr)[var];
+      grid-template-columns: repeat(var(--grid-cols), 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-con .game-area .stage-info {
@@ -151,21 +160,48 @@
   font-size: larger;
   font-weight: 600;
   color: var(--color-font-secondary);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.main-con .player-ui .player .gold-icon {
+.main-con .player-ui .player .gold-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 5px;
+}
+
+.main-con .player-ui .player .gold-con .gold-icon {
   color: goldenrod;
 }
 
-.main-con .player-ui .player .gold-icon i {
+.main-con .player-ui .player .gold-con .gold-icon i {
   font-size: 1.5rem;
 }
 
-.main-con .player-ui .player .life-icon {
+.main-con .player-ui .player .life-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 5px;
+}
+
+.main-con .player-ui .player .life-con .life-icon {
   color: red;
 }
 
-.main-con .player-ui .player .life-icon i {
+.main-con .player-ui .player .life-con .life-icon i {
   font-size: 1.5rem;
 }
 
@@ -180,6 +216,9 @@
   color: var(--color-font-secondary);
   width: 200px;
   padding: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .main-con .player-ui .items .shovels .shovel-icon {
@@ -188,6 +227,17 @@
 
 .main-con .player-ui .items .shovels .shovel-icon i {
   font-size: 1.5rem;
+}
+
+.main-con .player-ui .items .max-inventory {
+  font-size: larger;
+  font-weight: 600;
+  color: var(--color-font-secondary);
+  width: 200px;
+  padding: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .main-con .player-ui .options {
@@ -216,5 +266,16 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5rem;
   padding: .5rem;
+}
+
+.grid-item {
+  height: 70px;
+  width: 70px;
+  border: 3px solid var(--color-font-primary);
+  background-color: var(--color-font-secondary);
+}
+
+.grid-item:hover {
+  background-color: darkgray;
 }
 /*# sourceMappingURL=styles.css.map */
