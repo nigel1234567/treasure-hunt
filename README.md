@@ -32,25 +32,25 @@ Your final score is the max level you have reached.
 ## Level info (where level number is n)
 ### Number of cells
 #### For each level: (n+2)^2
-1: 3x3
-2: 4x4
-3: 5x5
+1: 3x3, 
+2: 4x4, 
+3: 5x5, 
 ...
 
 ### Number of loot per round (and chance of appearing per cell)
 #### For each level: n+2
 Every level increase by 1
-1: 3 (33.3%)
-2: 4 (25%)
+1: 3 (33.3%), 
+2: 4 (25%), 
 3: 5 (20%)
 ...
 
 ### Number of bombs per round (and chance of appearing per cell)
 #### Every level increase by 2
-1: 0
-2: 0
-3: 1 (4%)
-4: 3 (8.3%)
+1: 0, 
+2: 0, 
+3: 1 (4%), 
+4: 3 (8.3%), 
 5: 5 (10.2%)
 ...
 

@@ -1,0 +1,165 @@
+:root {
+  --color-font-primary: rgb(29, 29, 29);
+  --color-font-secondary: rgb(70, 70, 70);
+}
+
+.main-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: .1rem;
+}
+
+.main-con .game-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 4px solid black;
+  height: 800px;
+  width: 1000px;
+  background-color: lightgray;
+}
+
+.main-con .game-area .game-cells {
+  border: 4px solid darkgray;
+  height: inherit;
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-con .game-area .game-cells .game-grid {
+  border: 4px solid green;
+  height: 700px;
+  width: 700px;
+}
+
+.main-con .game-area .stage-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  border: 4px solid red;
+  height: inherit;
+  width: 200px;
+  background-color: lightgoldenrodyellow;
+}
+
+.main-con .game-area .stage-info .level {
+  font-size: larger;
+  font-weight: 600;
+  color: var(--color-font-secondary);
+  border: 4px solid orange;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .2rem;
+}
+
+.main-con .game-area .stage-info .loot-remaining {
+  font-size: larger;
+  font-weight: 600;
+  color: var(--color-font-secondary);
+  border: 4px solid orangered;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .2rem;
+}
+
+.main-con .game-area .stage-info .bombs-remaining {
+  font-size: larger;
+  font-weight: 600;
+  color: var(--color-font-secondary);
+  border: 4px solid pink;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .2rem;
+}
+
+.main-con .player-ui {
+  border: 4px solid darkblue;
+  height: 100px;
+  width: 1000px;
+  background-color: lightcyan;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-con .player-ui .gold {
+  border: 4px solid darkcyan;
+  width: 300px;
+  padding: .5rem;
+  font-size: larger;
+  font-weight: 600;
+  color: var(--color-font-secondary);
+}
+
+.main-con .player-ui .items {
+  border: 4px solid darkcyan;
+  width: 300px;
+}
+
+.main-con .player-ui .items .shovels {
+  font-size: larger;
+  font-weight: 600;
+  color: var(--color-font-secondary);
+  border: 4px solid maroon;
+  width: 200px;
+}
+/*# sourceMappingURL=styles.css.map */
