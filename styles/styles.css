@@ -264,7 +264,9 @@
   border-radius: 25%;
   background-color: darkorange;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: maroon;
   padding: .5rem;
 }
 
