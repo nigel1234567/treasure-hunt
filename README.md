@@ -5,9 +5,9 @@ Personal capstone project for the end of foundations for HTML, CSS and JavaScrip
 To create a simple game on a website to test my knowledge and skills of developing a web app using HTML, CSS and JavaScript.
 
 ## Stages of development
-Part 1: Play area and functional round (5 days)
-Part 2: Level progression and shop (5 days)
-Part 3: Game end conditions, bombs and new shop items (bag, scanner and heart)
+Part 1: Play area and functional round.
+Part 2: Level progression and shop.
+Part 3: Game end conditions, bombs and new shop items (bag, scanner and heart).
 
 # Game information
 ## Objective of game
