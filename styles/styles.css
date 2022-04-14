@@ -38,7 +38,7 @@
 }
 
 .main-con .game-area .game-cells {
-  border: 4px solid darkgray;
+  border: 4px solid black;
   height: inherit;
   width: 800px;
   display: -webkit-box;
@@ -80,7 +80,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   gap: 5px;
-  border: 4px solid red;
   height: inherit;
   width: 200px;
   background-color: lightgoldenrodyellow;
@@ -90,7 +89,6 @@
   font-size: larger;
   font-weight: 600;
   color: var(--color-font-secondary);
-  border: 4px solid orange;
   height: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -108,7 +106,6 @@
   font-size: larger;
   font-weight: 600;
   color: var(--color-font-secondary);
-  border: 4px solid orangered;
   height: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,7 +123,6 @@
   font-size: larger;
   font-weight: 600;
   color: var(--color-font-secondary);
-  border: 4px solid pink;
   height: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,6 +264,26 @@
   font-weight: bolder;
   color: maroon;
   padding: .5rem;
+}
+
+.main-con .player-ui .options .next-level {
+  display: none;
+  color: darkgreen;
+  background-color: lightgreen;
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+}
+
+.main-con .player-ui .options .shop {
+  display: none;
+  color: darkblue;
+  background-color: lightskyblue;
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+}
+
+.active {
+  display: block !important;
 }
 
 .grid-item {

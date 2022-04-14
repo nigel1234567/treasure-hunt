@@ -58,15 +58,15 @@ Every level increase by 1
 ### Loot chances
 | Loot          | Chance        | Gold  |
 | ------------- |:-------------:| -----:|
-| Common        | 50%           | 50    |
-| Uncommon      | 30%           | 100   |
-| Rare          | 15%           | 300   |
-| Mythical      | 5%            | 1000  |
+| Common        | 60%           | 50    |
+| Uncommon      | 28%           | 100   |
+| Rare          | 11%           | 300   |
+| Mythical      | 1%            | 1000  |
 
 ## Shop
 | Loot          | Cost          | Description                                |
 | ------------- |:-------------:| ------------------------------------------:|
 | Shovel        | 10            | To dig a selected cell                     |
 | Scanner       | 50            | Scan selected cell for loot or bombs       |
-| Shield        | 200           | Protect from one bomb                      |
-| Bag upgrade   | 500           | Upgrade max amount of shovels you can hold |
+| Bag upgrade   | 300           | Upgrade max amount of shovels you can hold |
+| Extra Life    | 1000          | Gain extra lives                           |
