@@ -17,7 +17,7 @@
 
     // Player UI
         // Gold (default = 0)
-        var gold = 0
+        var gold = 1000
 
         // Life (default = 1)
         var life = 1
@@ -25,8 +25,12 @@
         // Shovel (default = 5 per level)
         var shovel = 5
 
+        // Scanner (default = 0)
+        var scanner = 0
+
         // Max inventory
         var maxInventory = 5
+        var maxScanner = 1
 
 
 // Create UIs
@@ -63,9 +67,17 @@
         shovelUI = document.getElementsByClassName("shovel")
         shovelUI[0].innerHTML = `Shovels: ${shovel}`
 
+        // Scanner
+        scannerUI = document.getElementsByClassName("scanner")
+        scannerUI[0].innerHTML = `Scanners: ${scanner}`
+
         // Max inventory
         maxInventoryUI = document.getElementsByClassName("max-inventory")
         maxInventoryUI[0].innerHTML = `Max shovels: ${maxInventory}`
+
+        // Max scanner
+        maxScannerUI = document.getElementsByClassName("max-scanner")
+        maxScannerUI[0].innerHTML = `Max scanners: ${maxScanner}`
     }
 
 createUIs(level)
@@ -308,6 +320,105 @@ createUIs(level)
         // Hide shop and next level buttons
         hideButtons()
     }
+
+// Part 3: Create items for shop
+    // Create shop screen
+    shopBtn = document.querySelector('.shop')
+    shopBtn.addEventListener("click", () => {
+        // Declare shopScreen
+        shopScreen = document.querySelector('.shop-screen')
+        // If shopScreen is opened, close it
+        if (shopScreen.style.zIndex == "1") {
+            shopScreen.style.zIndex = "-1"
+        } else {
+            shopScreen.style.zIndex = "1"
+        }
+    })
+
+// Create shop buy functions
+let itemBtn = document.querySelectorAll('.item')
+for (let i = 0; i < itemBtn.length; i++) {
+    itemBtn[i].addEventListener("click", (e) => {
+        // Buy shovel
+        if (e.target.classList.contains("shop-shovel")) {
+            // Check if enough money
+            if (gold >= 10) {
+                // Check if bag is full
+                if (shovel == maxInventory) {
+                    alert("Your bag is full!")
+                } else {
+                    // Successful purchase
+                    alert("You bought a shovel!")
+                    // Update UI
+                    gold -= 10
+                    goldUI[0].innerHTML = `Gold: ${gold}`
+                    shovel += 1
+                    shovelUI[0].innerHTML = `Shovels: ${shovel}`
+                }
+            } else {
+                // Purchase fail
+                alert("You don't have enough gold for that!")
+            }
+        }
+        // Buy scanner
+        if (e.target.classList.contains("shop-scanner")) {
+            // Check if enough money
+            if (gold >= 50) {
+                // Check if bag is full
+                if (scanner == maxScanner) {
+                    alert("Your bag is full!")
+                } else {
+                    // Successful purchase
+                    alert("You bought a scanner!")
+                    // Update UI
+                    gold -= 50
+                    goldUI[0].innerHTML = `Gold: ${gold}`
+                    scanner += 1
+                    scannerUI[0].innerHTML = `Scanners: ${scanner}`
+                }
+            } else {
+                // Purchase fail
+                alert("You don't have enough gold for that!")
+            }
+        }
+        // Buy bag
+        if (e.target.classList.contains("shop-bag")) {
+            // Check if enough money
+            if (gold >= 300) {
+                // Successful purchase
+                alert("You upgraded your bag!")
+                // Update UI
+                gold -= 300
+                goldUI[0].innerHTML = `Gold: ${gold}`
+                maxInventory += 2
+                maxInventoryUI[0].innerHTML = `Max shovels: ${maxInventory}`
+                maxScanner += 1
+                maxScannerUI[0].innerHTML = `Max scanners: ${maxScanner}`
+            } else {
+                // Purchase fail
+                alert("You don't have enough gold for that!")
+            }
+        }
+        // Buy heart (life)
+        if (e.target.classList.contains("shop-heart")) {
+            // Check if enough money
+            if (gold >= 1000) {
+                alert("You bought a heart!")
+                // Update UI
+                gold -= 1000
+                goldUI[0].innerHTML = `Gold: ${gold}`
+                life += 1
+                lifeUI[0].innerHTML = `Life: ${life}`
+            } else {
+                // Purchase fail
+                alert("You don't have enough gold for that!")
+            }
+        }
+    })
+}
+
+
+
 
     // Next Level Button
     nextLevelBtn = document.querySelector('.next-level')

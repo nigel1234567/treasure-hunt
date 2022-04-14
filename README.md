@@ -7,7 +7,7 @@ To create a simple game on a website to test my knowledge and skills of developi
 ## Stages of development
 Part 1: Play area and functional round (5 days)
 Part 2: Level progression and shop (5 days)
-Part 3: Game end conditions, bombs and new shop items (bag, scanner and shield)
+Part 3: Game end conditions, bombs and new shop items (bag, scanner and heart)
 
 # Game information
 ## Objective of game
@@ -68,5 +68,5 @@ Every level increase by 1
 | ------------- |:-------------:| ------------------------------------------:|
 | Shovel        | 10            | To dig a selected cell                     |
 | Scanner       | 50            | Scan selected cell for loot or bombs       |
-| Bag upgrade   | 300           | Upgrade max amount of shovels you can hold |
+| Bag upgrade   | 300           | Increases max shovel by 2 and scanner by 1 |
 | Extra Life    | 1000          | Gain extra lives                           |

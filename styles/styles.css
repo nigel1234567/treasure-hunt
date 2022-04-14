@@ -44,12 +44,117 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.main-con .game-area .game-cells .shop-screen {
+  height: 200px;
+  width: 600px;
+  border: 4px solid black;
+  background-color: grey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  margin: 1.5rem;
+  gap: 2rem;
+  border-radius: 8px;
+  position: absolute;
+  left: 240px;
+  top: 250px;
+  z-index: -1;
+}
+
+.main-con .game-area .game-cells .shop-screen .shop-title {
+  color: maroon;
+  background-color: lightcoral;
+  font-size: 2rem;
+  font-weight: bolder;
+  padding: 5px;
+  border: 3px solid brown;
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 8px;
+}
+
+.main-con .game-area .game-cells .shop-screen .items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.main-con .game-area .game-cells .shop-screen .item {
+  border: 4px solid #474747;
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  border-radius: 8px;
+}
+
+.main-con .game-area .game-cells .shop-screen .item:hover {
+  background-color: darkgray;
+  color: white;
+}
+
+.main-con .game-area .game-cells .shop-screen .item .item-icon {
+  font-size: 30px;
+}
+
+.main-con .game-area .game-cells .shop-screen .item .item-text {
+  font-weight: bold;
+}
+
+.main-con .game-area .game-cells .shop-screen .item .item-cost {
+  font-weight: bold;
+}
+
+.main-con .game-area .game-cells .shop-screen .item .item-cost .fas {
+  color: goldenrod;
 }
 
 .main-con .game-area .game-cells .game-grid {
@@ -63,6 +168,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 0;
 }
 
 .main-con .game-area .stage-info {
@@ -204,14 +310,14 @@
 .main-con .player-ui .items {
   border: 4px solid darkcyan;
   width: 300px;
+  padding: .5rem;
 }
 
 .main-con .player-ui .items .shovels {
-  font-size: larger;
+  font-size: large;
   font-weight: 600;
   color: var(--color-font-secondary);
   width: 200px;
-  padding: .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,15 +328,42 @@
 }
 
 .main-con .player-ui .items .shovels .shovel-icon i {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
-.main-con .player-ui .items .max-inventory {
-  font-size: larger;
+.main-con .player-ui .items .scanners {
+  font-size: large;
   font-weight: 600;
   color: var(--color-font-secondary);
   width: 200px;
-  padding: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-con .player-ui .items .scanners .scanner-icon {
+  color: darkgreen;
+}
+
+.main-con .player-ui .items .scanners .scanner-icon i {
+  font-size: 1rem;
+}
+
+.main-con .player-ui .items .max-inventory {
+  font-size: large;
+  font-weight: 600;
+  color: var(--color-font-secondary);
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-con .player-ui .items .max-scanner {
+  font-size: large;
+  font-weight: 600;
+  color: var(--color-font-secondary);
+  width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
