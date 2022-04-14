@@ -73,7 +73,7 @@
 
         // Scanner
         scannerUI = document.getElementsByClassName("scanner")
-        scannerUI[0].innerHTML = `Scans: ${maxScanner}`
+        scannerUI[0].innerHTML = `Scans: ${scanner}`
 
         // Max inventory
         maxInventoryUI = document.getElementsByClassName("max-inventory")
@@ -391,11 +391,11 @@ for (let i = 0; i < itemBtn.length; i++) {
         // Buy scanner
         if (e.target.classList.contains("shop-scanner")) {
             // Check if enough money
-            if (gold >= 50) {
+            if (gold >= 100) {
                 // Successful purchase
                 alert("You bought a scanner!")
                 // Update UI
-                gold -= 50
+                gold -= 100
                 goldUI[0].innerHTML = `Gold: ${gold}`
                 maxScanner += 1
                 maxScannerUI[0].innerHTML = `Max scans: ${maxScanner}`
