@@ -185,6 +185,10 @@ createUIs(level)
                 if (gameEnded == true) {
                     gameEnd()
                 }
+                // Check if level ended
+                else if (levelEnd == true) {
+                    alert("The level has ended!")
+                }
                 // If cell is opened
                 else if (e.target.className == "grid-item opened" || e.target.className == "grid-item loot opened") {
                     alert("You have already opened this cell!")
@@ -291,7 +295,6 @@ createUIs(level)
                     // Level end
                     if (levelEnd == true) {
                         createButtons()
-                        level += 1
                     }
                 }
             }, false);
@@ -322,7 +325,6 @@ createUIs(level)
 
     // Create next level
     function nextLevel(level) {
-        
         // Reset levelEnd status
         levelEnd = false
         // Remove child nodes
@@ -448,6 +450,7 @@ for (let i = 0; i < itemBtn.length; i++) {
         }
         // Go to next level
         else {
+            level += 1
             nextLevel(level)
             if (shopScreen.style.zIndex == "1") {
                 shopScreen.style.zIndex = "-1"
