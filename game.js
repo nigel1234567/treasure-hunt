@@ -17,7 +17,7 @@
 
     // Player UI
         // Gold (default = 0)
-        var gold = 1000
+        var gold = 0
 
         // Life (default = 1)
         var life = 1
@@ -28,9 +28,13 @@
         // Scanner (default = 0)
         var scanner = 0
 
+        // Scanner function
+        var useScanner = false
+        
         // Max inventory
         var maxInventory = 5
         var maxScanner = 1
+
 
 
 // Create UIs
@@ -184,8 +188,26 @@ createUIs(level)
                 // If cell is opened
                 else if (e.target.className == "grid-item opened" || e.target.className == "grid-item loot opened") {
                     alert("You have already opened this cell!")
-                } else if (e.target.className == "grid-item bomb") { // If player clicks a bomb
-                    alert(`You have hit a bomb! You lose a life!`)
+                } 
+                // If using scanner
+                else if (useScanner == true) {
+                    scanner -= 1
+                    scannerUI[0].innerHTML = `Scanners: ${scanner}`
+                    // Return scanner UI to default
+                    scanBtn.style.backgroundColor = "lightgreen"
+                    scanBtn.style.color = "darkgreen"
+                    scanBtn.innerHTML = "Scan"
+                    useScanner = false
+                    // If scanned cell has something
+                    if (e.target.className == "grid-item loot" || e.target.className == "grid-item bomb") {
+                        alert("There is something in this cell!")
+                    } else {
+                        alert("This cell has nothing under it.")
+                    }
+                }
+                // If player clicks a bomb
+                else if (e.target.className == "grid-item bomb") { 
+                    alert(`You hit a bomb! You lose a life!`)
                     // Update life
                     life -= 1
                     lifeUI = document.getElementsByClassName("life")
@@ -313,8 +335,6 @@ createUIs(level)
 
         // Add new level
         createLevel(level)
-        
-        shovel = 5 // to delete
         gameplay()
 
         // Hide shop and next level buttons
@@ -417,13 +437,22 @@ for (let i = 0; i < itemBtn.length; i++) {
     })
 }
 
-
-
-
     // Next Level Button
     nextLevelBtn = document.querySelector('.next-level')
     nextLevelBtn.addEventListener("click", () => {
-        nextLevel(level) 
+        // Cap level at 8
+        if (level == 8) {
+            alert(`Congratulations! You have reached the end of the game! You have made it to level ${level} with ${gold} gold. Thank you for playing!`)
+        } else if (shovel == 0) { // No shovels to progress
+            alert("You do not have enough shovels to progress to the next level! Please purchase some from the shop!")
+        }
+        // Go to next level
+        else {
+            nextLevel(level)
+            if (shopScreen.style.zIndex == "1") {
+                shopScreen.style.zIndex = "-1"
+            } 
+        }
     })
 
     // Restart level
@@ -435,7 +464,33 @@ for (let i = 0; i < itemBtn.length; i++) {
 
 // Game end
 function gameEnd() {
-    alert(`Your game has ended. The highest level you have reached is level ${level}!`)
+    alert(`Your game has ended. You have made it to level ${level} with ${gold} gold!`)
     gameEnded = true
 }
 
+// Scanner function
+scanBtn = document.querySelector('.scan-btn')
+scanBtn.addEventListener("click", () => {
+    if (scanner == 0) {
+        alert("You do not have any scanners!")
+    } 
+    // If already scanning
+    else if (useScanner == true) {
+        scanBtn.style.backgroundColor = "lightgreen"
+        scanBtn.style.color = "darkgreen"
+        scanBtn.innerHTML = "Scan"
+        useScanner = false
+    }   
+    // If not scanning 
+    else {
+        // Update UI
+        useScanner = true
+        scanBtn.style.backgroundColor = "darkgreen"
+        scanBtn.style.color = "lightgreen"
+        scanBtn.innerHTML = "Scanning"
+        scanCell = document.querySelectorAll(".grid-item")
+    }
+})
+
+// scanner -= 1
+// scannerUI[0].innerHTML = `Scanners: ${scanner}`
