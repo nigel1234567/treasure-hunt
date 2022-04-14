@@ -64,9 +64,9 @@ Every level increase by 1
 | Mythical      | 1%            | 1000  |
 
 ## Shop
-| Loot          | Cost          | Description                                |
-| ------------- |:-------------:| ------------------------------------------:|
-| Shovel        | 10            | To dig a selected cell                     |
-| Scanner       | 50            | Scan selected cell for loot or bombs       |
-| Bag upgrade   | 300           | Increases max shovel by 2 and scanner by 1 |
-| Extra Life    | 1000          | Gain extra lives                           |
+| Loot          | Cost          | Description                                                      |
+| ------------- |:-------------:| ----------------------------------------------------------------:|
+| Shovel        | 10            | To dig a selected cell                                           |
+| Scanner       | 100           | Scan selected cell for loot or bombs. Adds 1 use per round       |
+| Bag upgrade   | 300           | Increases max shovel by 2                                        |
+| Extra Life    | 1000          | Gain extra lives                                                 |

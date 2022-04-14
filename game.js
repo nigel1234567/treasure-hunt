@@ -33,7 +33,7 @@
         
         // Max inventory
         var maxInventory = 5
-        var maxScanner = 1
+        var maxScanner = 0
 
 
 
@@ -73,7 +73,7 @@
 
         // Scanner
         scannerUI = document.getElementsByClassName("scanner")
-        scannerUI[0].innerHTML = `Scanners: ${scanner}`
+        scannerUI[0].innerHTML = `Scans: ${maxScanner}`
 
         // Max inventory
         maxInventoryUI = document.getElementsByClassName("max-inventory")
@@ -81,7 +81,7 @@
 
         // Max scanner
         maxScannerUI = document.getElementsByClassName("max-scanner")
-        maxScannerUI[0].innerHTML = `Max scanners: ${maxScanner}`
+        maxScannerUI[0].innerHTML = `Max scans: ${maxScanner}`
     }
 
 createUIs(level)
@@ -196,16 +196,22 @@ createUIs(level)
                 // If using scanner
                 else if (useScanner == true) {
                     scanner -= 1
-                    scannerUI[0].innerHTML = `Scanners: ${scanner}`
+                    scannerUI[0].innerHTML = `Scans: ${scanner}`
                     // Return scanner UI to default
                     scanBtn.style.backgroundColor = "lightgreen"
                     scanBtn.style.color = "darkgreen"
                     scanBtn.innerHTML = "Scan"
                     useScanner = false
-                    // If scanned cell has something
-                    if (e.target.className == "grid-item loot" || e.target.className == "grid-item bomb") {
-                        alert("There is something in this cell!")
-                    } else {
+                    // If scanned cell has loot
+                    if (e.target.className == "grid-item loot") {
+                        alert("There is loot in this cell!")
+                    }
+                    // If scanned cell has bomb
+                    else if (e.target.className == "grid-item bomb") {
+                        alert("There is a bomb in this cell!")
+                    }
+                    
+                    else {
                         alert("This cell has nothing under it.")
                     }
                 }
@@ -386,18 +392,13 @@ for (let i = 0; i < itemBtn.length; i++) {
         if (e.target.classList.contains("shop-scanner")) {
             // Check if enough money
             if (gold >= 50) {
-                // Check if bag is full
-                if (scanner == maxScanner) {
-                    alert("Your bag is full!")
-                } else {
-                    // Successful purchase
-                    alert("You bought a scanner!")
-                    // Update UI
-                    gold -= 50
-                    goldUI[0].innerHTML = `Gold: ${gold}`
-                    scanner += 1
-                    scannerUI[0].innerHTML = `Scanners: ${scanner}`
-                }
+                // Successful purchase
+                alert("You bought a scanner!")
+                // Update UI
+                gold -= 50
+                goldUI[0].innerHTML = `Gold: ${gold}`
+                maxScanner += 1
+                maxScannerUI[0].innerHTML = `Max scans: ${maxScanner}`
             } else {
                 // Purchase fail
                 alert("You don't have enough gold for that!")
@@ -414,8 +415,6 @@ for (let i = 0; i < itemBtn.length; i++) {
                 goldUI[0].innerHTML = `Gold: ${gold}`
                 maxInventory += 2
                 maxInventoryUI[0].innerHTML = `Max shovels: ${maxInventory}`
-                maxScanner += 1
-                maxScannerUI[0].innerHTML = `Max scanners: ${maxScanner}`
             } else {
                 // Purchase fail
                 alert("You don't have enough gold for that!")
@@ -451,6 +450,7 @@ for (let i = 0; i < itemBtn.length; i++) {
         // Go to next level
         else {
             level += 1
+            scanner = maxScanner
             nextLevel(level)
             if (shopScreen.style.zIndex == "1") {
                 shopScreen.style.zIndex = "-1"
@@ -496,4 +496,4 @@ scanBtn.addEventListener("click", () => {
 })
 
 // scanner -= 1
-// scannerUI[0].innerHTML = `Scanners: ${scanner}`
+// scannerUI[0].innerHTML = `Scans: ${scanner}`
